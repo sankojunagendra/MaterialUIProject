@@ -14,7 +14,11 @@ const useStyles = makeStyles(theme => ({
         backgroundColor: theme.palette.common.blue,
         width:"100%",
         zIndex:1302,
-        position:"relative"
+        position:"relative",
+        marginTop:"8em",
+        [theme.breakpoints.down("sm")]: {
+            marginTop:"3em"
+        }
     },
     adornment: {
         width:"25em",
