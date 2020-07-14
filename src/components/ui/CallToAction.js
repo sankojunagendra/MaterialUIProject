@@ -7,12 +7,13 @@ import Button from "@material-ui/core/Button";
 import ButtonArrow from "./ButtonArrow";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
-import background from '../../images/background.png'
-//import background from "../../assets/background.jpg";
+// import background from '../../images/background.jpg';
+import background from '../../images/bulb.jpg';
 import mobileBackground from "../../assets/mobileBackground.jpg";
 
 const useStyles = makeStyles(theme => ({
     background: {
+        // backgroundimage: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(./resources/css/images/bg.jpg);
         backgroundImage: `url(${background})`,
         backgroundPosition: "center",
         backgroundSize: "cover",
@@ -20,7 +21,7 @@ const useStyles = makeStyles(theme => ({
         backgroundRepeat: "no-repeat",
         height: "50em",
         width: "100%",
-        [theme.breakpoints.down("md")]: {
+        [theme.breakpoints.down("sm")]: {
             backgroundImage: `url(${mobileBackground})`,
             backgroundAttachment: "inherit",
             height: "40em",
@@ -51,6 +52,7 @@ const useStyles = makeStyles(theme => ({
     learnButtonHero: {
         ...theme.typography.learnButton,
         fontSize: "0.9rem",
+        color:"white", // my change
         height: 45,
         width: 145
     },

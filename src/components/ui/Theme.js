@@ -42,7 +42,7 @@ export default createMuiTheme({
         h2: {
             fontFamily: "Raleway",
             fontWeight: 700,
-            fontSize: "2.5rem",
+            fontSize: "3rem",
             color: arcBlue,
             lineHeight: 1.5
         },
@@ -71,6 +71,11 @@ export default createMuiTheme({
             color: "white",
             fontWeight: 300,
             fontSize: "1.25rem"
+        },
+        body1: {
+            fontSize: "1.25rem",
+            color: arcGrey,
+            fontWeight: 300
         },
     },
     breakpoints:{

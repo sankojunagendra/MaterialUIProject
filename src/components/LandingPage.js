@@ -78,7 +78,7 @@ const LandingPage = (props) => {
 
     const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
     // const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
-
+    
     return(
         <>
             <Grid container direction="column" className={classes.mainContainer}>
@@ -137,7 +137,7 @@ const LandingPage = (props) => {
                 {/*-----Solar Products-----*/}
                     <Grid
                         container
-                        direction="row"
+                        // direction="row"
                         justify={matchesSM ? "center" : "flex-end"}
                         className={classes.serviceContainer}
                     >
@@ -153,7 +153,7 @@ const LandingPage = (props) => {
                                 Save Resources. Save Planet. Save Human.
                             </Typography>
                             <Typography variant="subtitle1">
-                                We offer Services and Installation of Solar Plant
+                                We offer Solar Consultancy Services, Installation of Solar Plant
                                 {matchesSM ? null : <br />}and provide all Solar Products.
                             </Typography>
                             <Button
@@ -189,7 +189,8 @@ const LandingPage = (props) => {
                             item
                             style={{
                             marginLeft: matchesSM ? 0 : "5em",
-                            textAlign: matchesSM ? "center" : undefined
+                            textAlign: matchesSM ? "center" : undefined,
+                            marginBottom:"8em" // mychange
                             }}
                         >
                             <Typography variant="h4">Maintenance Facilities</Typography>
@@ -221,12 +222,6 @@ const LandingPage = (props) => {
                         </Grid>
                     </Grid>
                 </Grid>
-                {/* <Grid item>
-                   
-                    <CallToAction 
-                       
-                    />
-                </Grid> */}
             </Grid>
         </>
     );
