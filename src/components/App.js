@@ -9,6 +9,7 @@ import theme from './ui/Theme'
 import LandingPage from './LandingPage';
 import ServicesPage from './ServicesPage';
 import AboutUs from './AboutUs';
+import ElectricalPage from '../components/Services/ElectricalPage'
 
 const App = () => {
   const [selectedIndex, setSelectedIndex] = useState(0)
@@ -26,7 +27,7 @@ const App = () => {
           <Switch>
             <Route exact path="/" component={LandingPage}/>
             <Route exact path="/services" component={ServicesPage}/>
-            <Route exact path="/electrical" component={() => <div>Electrical Services</div>}/>
+            <Route exact path="/electrical" component={ElectricalPage}/>
             <Route exact path="/solar" component={() => <div>Solar Services</div>}/>
             <Route exact path="/other" component={() => <div>Other Services</div>}/>
             <Route exact path="/about" component={AboutUs}/>

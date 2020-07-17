@@ -2,7 +2,6 @@ import React from "react";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import Avatar from "@material-ui/core/Avatar";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 import history from "../assets/history.svg";
@@ -29,9 +28,10 @@ const useStyles = makeStyles(theme => ({
       paddingRight: "1.5em"
     }
   },
-  avatar: {
+  avatarContainer: {
     height: "15em",
     width: "15em",
+    borderRadius:"50%",
     [theme.breakpoints.down("sm")]: {
       height: "10em",
       width: "10em",
@@ -39,6 +39,13 @@ const useStyles = makeStyles(theme => ({
       maxWidth: 300
     }
   },
+  
+  avatar: {
+    height: "100%",
+    width:"100%",
+    borderRadius:"50%"
+  },
+
   specialText: {
     fontFamily: "Pacifico",
     color: theme.palette.common.orange
@@ -199,7 +206,9 @@ export default function About(props) {
             </Grid>
             {/* Founder Block */}
             <Grid item style={{ marginTop: "3em"}}>
-                <Avatar alt="founder" src={profile} className={classes.avatar}/>
+              <div className={classes.avatarContainer}>
+                <img alt="founder" src={profile} className={classes.avatar} />
+              </div>
             </Grid>
           </Grid>
         </Grid>
@@ -243,7 +252,9 @@ export default function About(props) {
             style={{ maxWidth : "25em"}}
           >
             <Grid item style={{ marginTop: "3em"}}>
-                <Avatar alt="director" src={director} className={classes.avatar}/>
+              <div className={classes.avatarContainer}>
+                <img alt="director" src={director} className={classes.avatar}/>
+              </div>
             </Grid>
           </Grid>
         </Grid>
@@ -296,7 +307,9 @@ export default function About(props) {
             style={{ maxWidth : "25em"}}
           >
             <Grid item style={{ marginTop: "3em"}}>
-                <Avatar alt="chiefEngineer" src={chiefEngineer} className={classes.avatar}/>
+              <div className={classes.avatarContainer}>
+                <img alt="chiefEngineer" src={chiefEngineer} className={classes.avatar}/>
+              </div>
             </Grid>
           </Grid>
         </Grid>
@@ -351,7 +364,9 @@ export default function About(props) {
             style={{ maxWidth : "25em"}}
           >
             <Grid item style={{ marginTop: "3em"}}>
-                <Avatar alt="rdHod" src={rdHod} className={classes.avatar}/>
+              <div className={classes.avatarContainer}>
+                <img alt="rdHod" src={rdHod} className={classes.avatar}/>
+              </div>
             </Grid>
           </Grid>
         </Grid>

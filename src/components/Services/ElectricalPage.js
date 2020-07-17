@@ -4,11 +4,37 @@ import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 
-// import ButtonArrow from '../components/ui/ButtonArrow'
-import CallToAction from '../../components/ui/CallToAction'
+// react-responsive-carousel
+import styles from 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { Carousel } from 'react-responsive-carousel'
+
+// products
+
+import SolarLocation from '../../images/products/solarDemo.jpg'
+import Fan1 from '../../images/products/Fan1.jpg'
+import Fan2 from '../../images/products/Fan2.jpg'
+import Fan3 from '../../images/products/Fan3.jpg'
+import Fan4 from '../../images/products/Fan4.jpg'
+import CoolerFront from '../../images/products/CoolerFront.jpg'
+import CoolerBack from '../../images/products/CoolerBack.jpg'
+import CoolerLeft from '../../images/products/Cooler1_Left.jpg'
+import CoolerRight from '../../images/products/Cooler1_Right.jpg'
+import Cooler2 from '../../images/products/Cooler2.jpg'
+import Cooler3 from '../../images/products/Cooler3.jpg'
+import Mixer1 from '../../images/products/Mixer1.jpg'
+import Mixer2 from '../../images/products/Mixer2.jpg'
 
 
 const useStyles = makeStyles(theme => ({
+    rowContainer: {
+        paddingLeft: "5em",
+        paddingRight: "5em",
+        [theme.breakpoints.down("sm")]: {
+          paddingLeft: "1.5em",
+          paddingRight: "1.5em"
+        }
+    },
+
     electricalBlock: {
         marginTop: "8em",
         [theme.breakpoints.down("sm")]: {
@@ -21,7 +47,39 @@ const useStyles = makeStyles(theme => ({
     },
     specialText: {
         fontFamily: "Pacifico",
-        color: theme.palette.common.orange
+        // color: theme.palette.common.orange
+        color: theme.palette.secondary.light
+    },
+    productsContainer: {
+        width:"100%",
+        height:"35em",
+        backgroundColor:"orange",
+        [theme.breakpoints.down("sm")]: {
+           height:"15em"
+        }
+    },
+    
+    content: {
+        width: '100%',
+        height: '35em',
+        maxWidth: 'initial',
+        maxHeight: 'initial',
+        marginTop: 0,
+        top:0,
+        transform: 'none',
+        position:'relative'
+    },
+    arrowRight: {
+        right:10
+    },
+    arrowLeft: {
+        left: 10
+    },
+    carouselWrapper: {
+        borderRadius: 0,
+        transform:'none',
+        height:"100%",
+        overflow:"auto"
     },
 }))
 
@@ -31,18 +89,52 @@ const ElectricalPage = (props) => {
 
     const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
     const matchesMD = useMediaQuery(theme.breakpoints.down("md"))
-
+    
     return(
         <>
             <Grid container direction="column">
-                <Grid item>
-                    {/*-----Call To Action Block-----*/}
-                    <CallToAction 
-                        // setValue={props.setValue}
-                    />
-                </Grid>
-                <Grid item>
-                    <Grid 
+                {/* <Grid item className={classes.productsContainer}> */}
+                    <Carousel width="100%" dynamicHeight={true} showThumbs={false} showStatus={false} >
+                            {/* Cooler Block */}
+                            <div>
+                                <img alt="coolerFront" src={CoolerFront}/>
+                            </div>
+                            <div>
+                                <img alt="coolerBack" src={CoolerBack}/>
+                            </div>
+                            <div>
+                                <img alt="coolerLeft" src={CoolerLeft}/>
+                            </div>
+                            <div>
+                                <img alt="coolerRight" src={CoolerRight}/>
+                            </div>
+
+                            {/* Fan Block */}
+                            <div>
+                                <img alt="fan1" src={Fan1}/>
+                            </div>
+                            <div>
+                                <img alt="fan2" src={Fan2}/>
+                            </div>
+                            <div>
+                                <img alt="fan3" src={Fan3}/>
+                            </div>
+                            <div>
+                                <img alt="fan4" src={Fan4}/>
+                            </div>
+
+                            {/* Mixer Block */}
+                            <div>
+                                <img alt="mixer1" src={Mixer1}/>
+                            </div>
+                            <div>
+                                <img alt="mixer2" src={Mixer2}/>
+                            </div>
+                    </Carousel>
+                
+                {/* </Grid> */}
+                <Grid item className={classes.rowContainer}>
+                    <Grid
                         container 
                         className={classes.electricalBlock}
                         justify={matchesSM ? "center" : undefined}
