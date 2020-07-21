@@ -5,10 +5,10 @@ import Typography from "@material-ui/core/Typography";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 import history from "../assets/history.svg";
-import profile from '../images/founder.jpg';
-import director from '../images/director.jpg';
-import chiefEngineer from '../images/chiefEngineer.jpg';
-import rdHod from '../images/rdHod.jpg';
+import founder from '../images/team/founder.jpg';
+import director from '../images/team/director.jpg';
+import chiefEngineer from '../images/team/chiefEngineer.jpg';
+import rdHod from '../images/team/rdHod.jpg';
 
 import CallToAction from "./ui/CallToAction";
 
@@ -45,7 +45,7 @@ const useStyles = makeStyles(theme => ({
     width:"100%",
     borderRadius:"50%"
   },
-
+  
   specialText: {
     fontFamily: "Pacifico",
     color: theme.palette.common.orange
@@ -207,7 +207,7 @@ export default function About(props) {
             {/* Founder Block */}
             <Grid item style={{ marginTop: "3em"}}>
               <div className={classes.avatarContainer}>
-                <img alt="founder" src={profile} className={classes.avatar} />
+                <img alt="founder" src={founder} className={classes.avatar} />
               </div>
             </Grid>
           </Grid>
@@ -400,11 +400,11 @@ export default function About(props) {
             </Grid>
         </Grid>
       </Grid>
-      <Grid item>
+      {/* <Grid item>
         <CallToAction 
            // setValue={props.setValue}
         />
-      </Grid>
+      </Grid> */}
     </Grid>
   );
 }

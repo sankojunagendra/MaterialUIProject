@@ -3,6 +3,7 @@ import { createMuiTheme } from '@material-ui/core/styles'
 const arcBlue = "#0B72B9"
 const arcOrange = "#FFBa60"
 const arcGrey = "#868686"
+const bgColor = "#085489"
 
 export default createMuiTheme({
     palette: {
@@ -77,6 +78,9 @@ export default createMuiTheme({
             color: arcGrey,
             fontWeight: 300
         },
+        background: {
+            backgroundColor: bgColor
+        }
     },
     breakpoints:{
         values: {

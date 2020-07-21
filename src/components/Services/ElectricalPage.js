@@ -4,25 +4,20 @@ import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 
-// react-responsive-carousel
-import styles from 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { Carousel } from 'react-responsive-carousel'
+import SwipeableViews from 'react-swipeable-views'
 
-// products
-
-import SolarLocation from '../../images/products/solarDemo.jpg'
-import Fan1 from '../../images/products/Fan1.jpg'
-import Fan2 from '../../images/products/Fan2.jpg'
-import Fan3 from '../../images/products/Fan3.jpg'
-import Fan4 from '../../images/products/Fan4.jpg'
-import CoolerFront from '../../images/products/CoolerFront.jpg'
-import CoolerBack from '../../images/products/CoolerBack.jpg'
-import CoolerLeft from '../../images/products/Cooler1_Left.jpg'
-import CoolerRight from '../../images/products/Cooler1_Right.jpg'
-import Cooler2 from '../../images/products/Cooler2.jpg'
-import Cooler3 from '../../images/products/Cooler3.jpg'
-import Mixer1 from '../../images/products/Mixer1.jpg'
-import Mixer2 from '../../images/products/Mixer2.jpg'
+import CoolerFront from '../../images/products/coolers/Cooler_Front.png'
+import CoolerBack from '../../images/products/coolers/Cooler_Back.png'
+import CoolerLeft from '../../images/products/coolers/Cooler_Left.png'
+import CoolerRight from '../../images/products/coolers/Cooler_Right.png'
+import CoolerGreenBorder from '../../images/products/coolers/Cooler_GreenBorder.png'
+import CoolerTopBlue from '../../images/products/coolers/Cooler_TopBlue.png'
+import Fan1 from '../../images/products/fans/Fan_1.png'
+import Fan2 from '../../images/products/fans/Fan_2.png'
+import Fan3 from '../../images/products/fans/Fan_3.png'
+import Fan4 from '../../images/products/fans/Fan_4.png'
+import Grinder from '../../images/products/MixerGrinders/Grinder.png'
+import Grinder2 from '../../images/products/MixerGrinders/Grinder_2.png'
 
 
 const useStyles = makeStyles(theme => ({
@@ -51,11 +46,28 @@ const useStyles = makeStyles(theme => ({
         color: theme.palette.secondary.light
     },
     productsContainer: {
+        ...theme.typography.background,
         width:"100%",
-        height:"35em",
-        backgroundColor:"orange",
-        [theme.breakpoints.down("sm")]: {
-           height:"15em"
+        height:"36em",
+       [theme.breakpoints.down("sm")]: {
+           height:"18em"
+        }
+    },
+
+    imageContainer: {
+        justifyContent:"center",
+        display:'flex',
+        height:"36em",
+        alignItems:"center",
+        [theme.breakpoints.down("sm")] : {
+            height:"18em",
+        }
+    },
+
+    image:{
+        [theme.breakpoints.down("sm")] : {
+            width: 250,
+            height: 250
         }
     },
     
@@ -83,6 +95,21 @@ const useStyles = makeStyles(theme => ({
     },
 }))
 
+const products = [
+                    { name: "coolerFront", source: CoolerFront},
+                    { name: "coolerBack", source: CoolerBack},
+                    { name: "coolerRight", source:CoolerRight},
+                    { name: "coolerLeft", source: CoolerLeft},
+                    { name: "coolerGreenBorder", source: CoolerGreenBorder},                
+                    { name: "coolerTopBlue", source: CoolerTopBlue},
+                    { name: "fan1", source: Fan1},
+                    { name: "fan2", source: Fan2},
+                    { name: "fan3", source: Fan3},
+                    { name: "fan4", source: Fan4},
+                    { name: "grinder1", source: Grinder},
+                    { name: "grinder2", source: Grinder2}
+                ]
+
 const ElectricalPage = (props) => {
     const classes = useStyles()
     const theme = useTheme();
@@ -93,46 +120,18 @@ const ElectricalPage = (props) => {
     return(
         <>
             <Grid container direction="column">
-                {/* <Grid item className={classes.productsContainer}> */}
-                    <Carousel width="100%" dynamicHeight={true} showThumbs={false} showStatus={false} >
-                            {/* Cooler Block */}
-                            <div>
-                                <img alt="coolerFront" src={CoolerFront}/>
+                <Grid item className={classes.productsContainer}>
+                    <SwipeableViews enableMouseEvents style={{ height:"100%" }}>
+                        { products.map((data, index) => (
+                            <div 
+                            key={`${data}${index}`}
+                            className={classes.imageContainer}>
+                                <img alt={data.name} src={data.source} className={classes.image} />
                             </div>
-                            <div>
-                                <img alt="coolerBack" src={CoolerBack}/>
-                            </div>
-                            <div>
-                                <img alt="coolerLeft" src={CoolerLeft}/>
-                            </div>
-                            <div>
-                                <img alt="coolerRight" src={CoolerRight}/>
-                            </div>
-
-                            {/* Fan Block */}
-                            <div>
-                                <img alt="fan1" src={Fan1}/>
-                            </div>
-                            <div>
-                                <img alt="fan2" src={Fan2}/>
-                            </div>
-                            <div>
-                                <img alt="fan3" src={Fan3}/>
-                            </div>
-                            <div>
-                                <img alt="fan4" src={Fan4}/>
-                            </div>
-
-                            {/* Mixer Block */}
-                            <div>
-                                <img alt="mixer1" src={Mixer1}/>
-                            </div>
-                            <div>
-                                <img alt="mixer2" src={Mixer2}/>
-                            </div>
-                    </Carousel>
+                        ))}
+                    </SwipeableViews>
+                </Grid>
                 
-                {/* </Grid> */}
                 <Grid item className={classes.rowContainer}>
                     <Grid
                         container 
