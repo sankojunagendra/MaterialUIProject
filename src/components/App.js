@@ -16,7 +16,7 @@ import MaintenancePage from '../components/Services/MaintenancePage'
 const App = () => {
   const [selectedIndex, setSelectedIndex] = useState(0)
   const [value, setValue] = useState(0)
-
+  
   return (
       <>
       <ThemeProvider theme={theme}>
@@ -26,7 +26,7 @@ const App = () => {
             setValue={setValue} 
             selectedIndex={selectedIndex}
             setSelectedIndex={setSelectedIndex}/>
-          {/* <Switch> */}
+          <Switch>
             <Route exact path="/" component={LandingPage}/>
             <Route exact path="/services" component={ServicesPage}/>
             <Route exact path="/electrical" component={ElectricalPage}/>
@@ -37,7 +37,7 @@ const App = () => {
             <Route exact path="/login" component={() => <div>Login</div>}/>
             <Route exact path="/payment" component={() => <div>PayOnline</div>}/>
             <Route exact path="/estimate" component={() => <div>Estimate</div>}/>
-          {/* </Switch> */}
+          </Switch>
           <Footer
             value={value} 
             setValue={setValue} 
