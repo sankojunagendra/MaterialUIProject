@@ -146,24 +146,24 @@ const Header = (props) => {
     }
 
     const menuOptions = [
-        { name:"Services", link:"/services", activeIndex: 1, selectedIndex: 0 },
-        { 
+        // { name:"Services", link:"/services", activeIndex: 1, selectedIndex: 0 },
+        {
             name:"Electrical Services", 
             link:"/electrical",
             activeIndex: 1,
-            selectedIndex: 1  
+            selectedIndex: 0  
         },
         {
             name:"Solar Services", 
             link:"/solar",
             activeIndex: 1,
-            selectedIndex: 2  
+            selectedIndex: 1
         },
         { 
             name:"Other Services", 
             link:"/other",
             activeIndex: 1,
-            selectedIndex: 3 
+            selectedIndex: 2 
         }
     ]
 
@@ -171,7 +171,7 @@ const Header = (props) => {
         { name: "Home", link: "/", activeIndex: 0 },
         { 
             name: "Services", 
-            link: "/services", 
+            // link: "/services", 
             activeIndex: 1,
             ariaOwns: anchorEl ? "simple-menu" : undefined,
             ariaPopup: anchorEl ? "true" : undefined,

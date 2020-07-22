@@ -8,17 +8,7 @@ import SwipeableViews from 'react-swipeable-views'
 
 import CoolerFront from '../../images/products/coolers/Cooler_Front.png'
 import CoolerBack from '../../images/products/coolers/Cooler_Back.png'
-import CoolerLeft from '../../images/products/coolers/Cooler_Left.png'
 import CoolerRight from '../../images/products/coolers/Cooler_Right.png'
-import CoolerGreenBorder from '../../images/products/coolers/Cooler_GreenBorder.png'
-import CoolerTopBlue from '../../images/products/coolers/Cooler_TopBlue.png'
-import Fan1 from '../../images/products/fans/Fan_1.png'
-import Fan2 from '../../images/products/fans/Fan_2.png'
-import Fan3 from '../../images/products/fans/Fan_3.png'
-import Fan4 from '../../images/products/fans/Fan_4.png'
-import Grinder from '../../images/products/MixerGrinders/Grinder.png'
-import Grinder2 from '../../images/products/MixerGrinders/Grinder_2.png'
-
 
 const useStyles = makeStyles(theme => ({
     rowContainer: {
