@@ -141,7 +141,7 @@ const ElectricalPage = (props) => {
                        <Grid item container direction="column" className={classes.heading}>
                             <Grid item>
                                 <Typography align={matchesMD ? "center" : undefined} variant="h2">
-                                    Electrical and Electronics
+                                    Electrical Services
                                 </Typography>
                             </Grid>
                             <Grid item>

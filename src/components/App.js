@@ -10,6 +10,8 @@ import LandingPage from './LandingPage';
 import ServicesPage from './ServicesPage';
 import AboutUs from './AboutUs';
 import ElectricalPage from '../components/Services/ElectricalPage'
+import SolarPage from '../components/Services/SolarPage'
+import MaintenancePage from '../components/Services/MaintenancePage'
 
 const App = () => {
   const [selectedIndex, setSelectedIndex] = useState(0)
@@ -28,8 +30,8 @@ const App = () => {
             <Route exact path="/" component={LandingPage}/>
             <Route exact path="/services" component={ServicesPage}/>
             <Route exact path="/electrical" component={ElectricalPage}/>
-            <Route exact path="/solar" component={() => <div>Solar Services</div>}/>
-            <Route exact path="/other" component={() => <div>Other Services</div>}/>
+            <Route exact path="/solar" component={SolarPage}/>
+            <Route exact path="/other" component={MaintenancePage}/>
             <Route exact path="/about" component={AboutUs}/>
             <Route exact path="/contact" component={() => <div>Contact</div>}/>
             <Route exact path="/login" component={() => <div>Login</div>}/>
